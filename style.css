@@ -5,6 +5,11 @@ body{
     font-family: 0;
     margin: 0;
     padding: 0;
+    background: linear-gradient(to right, #0a3003,#11330ab0,#00000000), url(imagens/equipe-um-tecnico-eletrico-trabalhando-em-um-quadro-de-distribuicao-com-fusiveis.jpg);
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 #header{
@@ -20,18 +25,18 @@ body{
 }
 
 #header > li > a{
-    color: #333333;
+    color: white;
     text-decoration: none;
 }
 
 #header > li > a:hover{
-    color: #b6a547;
+    color: #e7d150;
     text-decoration: underline #FFD700;
 }
 
 #logo{
     margin: 0 auto 0 0;
-    color: #2E8B57;
+    color: #04aa4c;
 }
 
 #section{
@@ -42,12 +47,13 @@ body{
 }
 
 #section > h2{
-    color: #184b18;
+    color: #04aa4c;
     font-size: 80px;
     margin: 80px 00px 0px 0px;
 }
 
 #section > p{
+    color: white;
     font-size: 30px;
 }
 
