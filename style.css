@@ -1,0 +1,56 @@
+
+
+body{
+    background-color: #ffffff;
+    font-family: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 10px;
+}
+
+#header > li{
+    display: flex;
+    padding-right: 35px;
+}
+
+#header > li > a{
+    color: #333333;
+    text-decoration: none;
+}
+
+#header > li > a:hover{
+    color: #b6a547;
+    text-decoration: underline #FFD700;
+}
+
+#logo{
+    margin: 0 auto 0 0;
+    color: #2E8B57;
+}
+
+#section{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+
+#section > h2{
+    color: #184b18;
+    font-size: 80px;
+    margin: 80px 00px 0px 0px;
+}
+
+#section > p{
+    font-size: 30px;
+}
+
+button{
+    margin-top: 10px;
+}
