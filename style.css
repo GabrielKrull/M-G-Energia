@@ -5,8 +5,8 @@ body{
     font-family: 0;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #0a3003,#11330ab0,#00000000), url(imagens/equipe-um-tecnico-eletrico-trabalhando-em-um-quadro-de-distribuicao-com-fusiveis.jpg);
-    background-size: 1500px;
+    background: linear-gradient(to right, #0a3003,#11330ab0,#00000000), url(imagens/eletricista.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -15,13 +15,15 @@ body{
 #header{
     display: flex;
     flex-direction: row;
-    justify-content: end;
-    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
     font-size: 18px;
+    list-style: none;
 }
 
 #header > li{
-    display: flex;
     padding-right: 35px;
 }
 
@@ -33,11 +35,25 @@ body{
 #header > li > a:hover{
     color: #e7d150;
     text-decoration: underline #FFD700;
+    font-size: 22px;
 }
 
 #logo{
-    margin: 0 auto 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: auto;
     color: #04aa4c;
+}
+
+a.logo{
+    text-decoration: none;
+    font-size: 40px;
+    color: #04aa4c;
+}
+
+a.logo:hover{
+    text-decoration: none;
+
 }
 
 #section{
@@ -45,19 +61,81 @@ body{
     flex-direction: column;
     margin: 10px;
     padding: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #section > h2{
     color: #04aa4c;
-    font-size: 80px;
-    margin: 80px 00px 0px 0px;
+    font-size: 4em;
+    margin: 80px 0px 0px 0px;
 }
 
 #section > p{
     color: white;
-    font-size: 30px;
+    font-size: 1.5em;
 }
 
 button{
     margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    #header {
+        padding: 10px;
+        font-size: 14px;
+        flex-wrap: nowrap;  
+    }
+
+    #header > li {
+        padding-right: 15px;
+        flex-wrap: nowrap;
+    }
+
+    a.logo {
+        font-size: 32px;
+    }
+
+    #section > h2 {
+        font-size: 2.5em;
+    }
+
+    #section > p {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}
+
+/* Para telas muito pequenas (menores que 480px) */
+@media screen and (max-width: 480px) {
+    #section > h2 {
+        font-size: 2em;
+    }
+
+    #section > p {
+        font-size: 1em;
+    }
+
+    a.logo {
+        font-size: 28px;
+        width: 100%;
+    }
+
+    #header {
+        flex-direction: row;
+        align-items: center;
+        font-size: 11px;
+    }
+
+    #header > li {
+        padding: 5px 0px 0px 0px;
+    }
 }
