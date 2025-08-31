@@ -5,7 +5,7 @@ body{
     font-family: 0;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #0a3003,#11330ab0,#00000000), url(imagens/eletricista.jpg);
+    background: linear-gradient(to right, #0a3003,#11330ab0,#000000b2,#000000b9), url(imagens/eletricista.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,24 +19,51 @@ body{
     justify-content: flex-end;
     align-items: center;
     padding-left: 20px;
-    font-size: 18px;
+    font-size: 1.125rem;
     list-style: none;
 }
 
-#header > li{
-    padding-right: 35px;
-}
-
 #header > li > a{
-    color: white;
+    color: #fefffe;
     text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 #header > li > a:hover{
-    color: #e7d150;
-    text-decoration: underline #FFD700;
-    font-size: 22px;
+    transform: scale(1.1);
 }
+
+.hover-underline {
+  font-size: 1rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  margin-right: 35px;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right,#ffae00,#ffd000,#ffe605,#fbff11);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
 
 #logo{
     display: flex;
@@ -47,13 +74,18 @@ body{
 
 a.logo{
     text-decoration: none;
-    font-size: 40px;
+    font-size: 1.5rem;
     color: #04aa4c;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
 }
 
 a.logo:hover{
     text-decoration: none;
-
+    transform: scale(1.1);
 }
 
 #section{
@@ -67,7 +99,7 @@ a.logo:hover{
 
 #section > h2{
     color: #04aa4c;
-    font-size: 4em;
+    font-size: 3.5rem;
     margin: 80px 0px 0px 0px;
 }
 
@@ -77,65 +109,50 @@ a.logo:hover{
 }
 
 button{
+    width: 18rem;
+    height: 2.5rem;
     margin-top: 10px;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        background-size: cover;
-        background-position: center;
-    }
-
-    #header {
-        padding: 10px;
-        font-size: 14px;
-        flex-wrap: nowrap;  
-    }
-
-    #header > li {
-        padding-right: 15px;
-        flex-wrap: nowrap;
-    }
-
-    a.logo {
-        font-size: 32px;
-    }
-
-    #section > h2 {
-        font-size: 2.5em;
-    }
-
-    #section > p {
-        font-size: 1.2em;
-    }
-
-    button {
-        font-size: 1.1em;
-    }
+.botao {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffae00;
+  border-radius: 7px;
+  position: relative;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }
 
-/* Para telas muito pequenas (menores que 480px) */
-@media screen and (max-width: 480px) {
-    #section > h2 {
-        font-size: 2em;
-    }
-
-    #section > p {
-        font-size: 1em;
-    }
-
-    a.logo {
-        font-size: 28px;
-        width: 100%;
-    }
-
-    #header {
-        flex-direction: row;
-        align-items: center;
-        font-size: 11px;
-    }
-
-    #header > li {
-        padding: 5px 0px 0px 0px;
-    }
+.botao::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #dd9000;
+  transition: width 0.3s ease;
+  z-index: -1;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -ms-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
 }
+
+.botao:hover::after {
+  width: 100%;
+}
+
+.botao:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
