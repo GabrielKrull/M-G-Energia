@@ -100,7 +100,7 @@ a.logo:hover{
 #section > h2{
     color: #04aa4c;
     font-size: 3.5rem;
-    margin: 80px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
 }
 
 #section > p{
@@ -111,7 +111,7 @@ a.logo:hover{
 button{
     width: 18rem;
     height: 2.5rem;
-    margin-top: 10px;
+    margin-top: 20px;
     transition: transform 0.3s ease;
     -webkit-transition: transform 0.3s ease;
     -moz-transition: transform 0.3s ease;
