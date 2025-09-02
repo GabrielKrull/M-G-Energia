@@ -1,7 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+
 body{
     background-color: #ffffff;
-    font-family: 0;
+    font-family: "Vend Sans", sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #0a3003,#0c2707c0,#000000b2,#000000b9), url(imagens/eletricista.jpg);
@@ -103,7 +105,6 @@ a.logo:hover{
 #sobrenos{
     display: flex;
     flex-direction: column;
-    margin: 10px;
     padding: 10px;
     max-width: 100%;
     box-sizing: border-box;
@@ -112,7 +113,7 @@ a.logo:hover{
 #section > h2{
     color: #2EC423;
     font-size: 3.5rem;
-    margin-top: 70px;
+    margin-top: 90px;
     margin-block-end: 7px;
 }
 
@@ -126,12 +127,13 @@ a.logo:hover{
 #section > p, #sobrenos > p{
     color: white;
     font-size: 1.5em;
+    margin-bottom: 0px;
 }
 
 button{
     width: 18rem;
     height: 2.5rem;
-    margin-top: 20px;
+    margin-top: 12px;
     margin-left: 10px;
     transition: transform 0.3s ease;
     -webkit-transition: transform 0.3s ease;
@@ -143,7 +145,7 @@ button{
 .botao {
   background-color: transparent;
   color: #ffffff;
-  border: 2px solid #ffae00;
+  border: 2px solid #ffc400;
   border-radius: 7px;
   position: relative;
   -webkit-border-radius: 7px;
@@ -159,7 +161,7 @@ button{
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #dd9000;
+  background-color: #ddce00;
   transition: width 0.3s ease;
   z-index: -1;
   -webkit-transition: width 0.3s ease;
