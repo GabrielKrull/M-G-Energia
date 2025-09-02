@@ -1,11 +1,10 @@
 
-
 body{
     background-color: #ffffff;
     font-family: 0;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #0a3003,#11330ab0,#000000b2,#000000b9), url(imagens/eletricista.jpg);
+    background: linear-gradient(to right, #0a3003,#0c2707c0,#000000b2,#000000b9), url(imagens/eletricista.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -14,13 +13,18 @@ body{
 
 #header{
     display: flex;
+    width: 100%;
+    background: linear-gradient(to right, #032406,#004606,#004606,#02940e3d);
+    padding-top: px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    position: fixed;
     padding-left: 20px;
     font-size: 1.125rem;
     list-style: none;
+    
 }
 
 #header > li > a{
@@ -69,13 +73,13 @@ body{
     display: flex;
     flex-wrap: wrap;
     margin-right: auto;
-    color: #04aa4c;
+    color: #2EC423;
 }
 
 a.logo{
     text-decoration: none;
     font-size: 1.5rem;
-    color: #04aa4c;
+    color: #2EC423;
     transition: transform 0.3s ease;
     -webkit-transition: transform 0.3s ease;
     -moz-transition: transform 0.3s ease;
@@ -91,6 +95,14 @@ a.logo:hover{
 #section{
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#sobrenos{
+    display: flex;
+    flex-direction: column;
     margin: 10px;
     padding: 10px;
     max-width: 100%;
@@ -98,12 +110,20 @@ a.logo:hover{
 }
 
 #section > h2{
-    color: #04aa4c;
+    color: #2EC423;
     font-size: 3.5rem;
-    margin: 30px 0px 0px 0px;
+    margin-top: 70px;
+    margin-block-end: 7px;
 }
 
-#section > p{
+ #sobrenos > h2{
+    color: #2EC423;
+    font-size: 3.5rem;
+    margin-top: 7px;
+    margin-block-end: 7px;
+ }
+
+#section > p, #sobrenos > p{
     color: white;
     font-size: 1.5em;
 }
@@ -112,6 +132,7 @@ button{
     width: 18rem;
     height: 2.5rem;
     margin-top: 20px;
+    margin-left: 10px;
     transition: transform 0.3s ease;
     -webkit-transition: transform 0.3s ease;
     -moz-transition: transform 0.3s ease;
