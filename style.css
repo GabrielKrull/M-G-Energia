@@ -124,10 +124,10 @@ a.logo:hover{
     margin-block-end: 7px;
  }
 
-#section > p, #sobrenos > p{
+#section p, #sobrenos p {
     color: white;
     font-size: 1.5em;
-    margin-bottom: 0px;
+    margin: 0px;
 }
 
 button{
@@ -147,7 +147,8 @@ button{
   color: #ffffff;
   border: 2px solid #ffc400;
   border-radius: 7px;
-  position: relative;
+  overflow: hidden;
+  z-index: -1;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
