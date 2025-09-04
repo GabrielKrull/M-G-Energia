@@ -180,3 +180,61 @@ button{
   transform: scale(1.1);
 }
 
+.footer{
+background:  linear-gradient(to right, #032406,#004606,#004606,#02940e3d);
+max-width: 1200px;
+margin: 0;
+padding: 40px 5rem;
+display: grid;
+grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+gap: 28px;
+}
+
+
+.footer h4{
+  color: #fff89c;
+}
+
+.links{
+  list-style: none;
+  padding: 0;
+}
+
+.links a{
+  text-decoration: none;
+  color: #fefffe;
+  transition: transform 0.3s ease;
+}
+
+.links a:hover{
+  color: #fff89c;
+  transform: scale(1.1);
+}
+
+.titulo-footer{
+  font-size: 35px;
+  color: #fefffe;
+}
+
+.p{
+  color: #fefffe;
+}
+
+.nav a{
+  list-style: none;
+  text-decoration: none;
+  color: #fefffe;
+  padding-right: 1rem;
+}
+
+.nav a:hover{
+  color: #fff89c;
+}
+
+@media (max-width: 980px){
+.footer{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+.footer{ grid-template-columns: 1fr; }
+
+}

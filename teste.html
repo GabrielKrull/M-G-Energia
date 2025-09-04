@@ -1,27 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .zoom {
-    display: inline-block; /* precisa disso pra poder aplicar transform */
-    padding: 12px 24px;
-    background: royalblue;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo de Footer Moderno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #121820;
+      --muted: #8a94a6;
+      --text: #e6eefc;
+      --brand: #7c3aed; /* roxo */
+      --accent: #22d3ee; /* ciano */
+      --ring: #2a3442;
+    }
 
-.zoom:hover {
-  transform: scale(1.2); /* zoom in */
-}
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: linear-gradient(180deg, #0b0f14 0%, #0b0f14 40%, #0e151d 100%);
+      display: flex;
+      flex-direction: column;
+    }
 
-    </style>
+    /* Conteúdo de exemplo só pra empurrar o footer */
+    main{
+      flex: 1 0 auto;
+      display: grid;
+      place-items: center;
+      padding: 48px 16px 0;
+    }
+    .demo{
+      max-width: 900px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--ring);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .demo h1{ font-size: 28px; margin: 0 0 8px; }
+    .demo p{ color: var(--muted); margin: 0; }
+
+    /* Footer */
+    footer{
+      flex-shrink: 0;
+      background: radial-gradient(1200px 400px at 20% 0%, rgba(124,58,237,0.12), transparent),
+                  radial-gradient(1000px 400px at 80% 0%, rgba(34,211,238,0.08), transparent),
+                  var(--card);
+      border-top: 1px solid var(--ring);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 28px;
+    }
+
+    /* Coluna brand */
+    .brand{
+      display: grid;
+      gap: 14px;
+    }
+    .logo{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      font-size: 20px;
+    }
+    .logo-badge{
+      width: 36px; height: 36px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      display: grid; place-items: center; font-weight: 800;
+      box-shadow: 0 8px 18px rgba(124,58,237,0.35);
+    }
+    .brand p{ color: var(--muted); margin: 2px 0 0; line-height: 1.6; }
+
+    /* Listas de links */
+    .col h4{
+      font-size: 14px; text-transform: uppercase; letter-spacing: .12em;
+      color: #b7c4dc; margin: 4px 0 10px; font-weight: 700;
+    }
+    .links{ list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .links a{
+      text-decoration: none; color: var(--muted);
+      padding: 6px 0; display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 10px; transition: transform .15s ease, color .15s ease, background .15s ease, border .15s ease;
+      border: 1px solid transparent; padding-inline: 8px;
+    }
+    .links a:hover{
+      color: var(--text);
+      background: rgba(124,58,237,0.06);
+      border-color: rgba(124,58,237,0.25);
+      transform: translateX(4px);
+    }
+
+    /* Newsletter */
+    .newsletter{ display: grid; gap: 10px; }
+    .newsletter p{ color: var(--muted); margin: 0; font-size: 14px; }
+    .input{
+      position: relative; display: flex; align-items: center; gap: 8px;
+      background: #0e141a; border: 1px solid var(--ring); border-radius: 14px; padding: 6px 6px 6px 12px;
+    }
+    .input input{
+      flex: 1; background: transparent; border: 0; outline: none; color: var(--text); padding: 10px 6px; font-size: 15px;
+    }
+    .btn{
+      cursor: pointer; border: 0; padding: 10px 14px; border-radius: 12px; font-weight: 600;
+      background: linear-gradient(135deg, var(--brand), var(--accent)); color: #0b0f14;
+      transition: transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 8px 22px rgba(124,58,237,0.45);
+    }
+    .btn:hover{ transform: translateY(-1px); }
+
+    /* Social */
+    .social{ display: flex; gap: 10px; margin-top: 6px; }
+    .icon-btn{
+      width: 38px; height: 38px; border-radius: 12px; display: inline-grid; place-items: center;
+      background: #0e141a; border: 1px solid var(--ring);
+      transition: transform .12s ease, border .12s ease, background .12s ease;
+    }
+    .icon-btn:hover{ transform: translateY(-2px); border-color: rgba(124,58,237,0.35); background: rgba(124,58,237,0.08); }
+    .icon{ width: 18px; height: 18px; fill: #b7c4dc; }
+
+    /* Barra inferior */
+    .bottom{
+      border-top: 1px dashed var(--ring);
+      padding: 14px 20px 26px; color: var(--muted);
+    }
+    .bottom .wrap{
+      max-width: 1200px; margin: 0 auto; display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    }
+    .legal{ display: flex; gap: 14px; }
+    .legal a{ color: var(--muted); text-decoration: none; }
+    .legal a:hover{ color: var(--text); }
+
+    /* Responsivo */
+    @media (max-width: 980px){
+      .container{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px){
+      .container{ grid-template-columns: 1fr; }
+      .bottom .wrap{ justify-content: center; text-align: center; }
+      .legal{ justify-content: center; }
+    }
+  </style>
 </head>
 <body>
-    <a href="" class="1" class="zoom">Clica</a>
+  <main>
+    <div class="demo">
+      <h1>Página de Exemplo</h1>
+      <p>Role até o final para ver o footer. Pode copiar e colar este arquivo e adaptar ao seu projeto.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="brand">
+        <a class="logo" href="#" aria-label="Início">
+          <span class="logo-badge">M&G</span>
+          <span>M&G Energia</span>
+        </a>
+        <p>Energia com segurança e eficiência. Projetos, manutenções e instalações elétricas residenciais e comerciais.</p>
+        <div class="social" aria-label="Nossas redes sociais">
+          <a class="icon-btn" href="#" aria-label="Instagram">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 16.8 2.8 2.8 0 0 0 12 9.2zm5.6-2.1a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1z"></path></svg>
+          </a>
+          <a class="icon-btn" href="#" aria-label="Facebook">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4z"></path></svg>
+          </a>
+          <a class="icon-btn" href="#" aria-label="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.5-2.6 5.1-2.6 5.4 0 6.4 3.6 6.4 8.3V24h-5V16.2c0-1.9 0-4.3-2.6-4.3-2.6 0-3 2-3 4.1V24h-5V8z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>Empresa</h4>
+        <ul class="links">
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Projetos</a></li>
+          <li><a href="#">Carreiras</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Suporte</h4>
+        <ul class="links">
+          <li><a href="#">Central de ajuda</a></li>
+          <li><a href="#">Garantia</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Status do serviço</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Newsletter</h4>
+        <form class="newsletter" onsubmit="event.preventDefault(); alert('Valeu! Cadastro de exemplo.');">
+          <p>Receba dicas de segurança, economia e novidades.</p>
+          <div class="input">
+            <input type="email" placeholder="Seu e-mail" required>
+            <button class="btn" type="submit">Assinar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="wrap">
+        <small>© <span id="year"></span> M&G Energia. Todos os direitos reservados.</small>
+        <nav class="legal">
+          <a href="#">Privacidade</a>
+          <a href="#">Termos</a>
+          <a href="#">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
